@@ -1,0 +1,26 @@
+{
+  "devices": [
+    {
+      "id": 1,
+      "icon" : "lamp-charge.svg",
+      "name": "Lamp",
+      "room": 1,
+      "status": "off"
+    },
+    {
+      "id": 2,
+      "icon" : "lamp-charge.svg",
+      "name": "Screen",
+      "room": 1,
+      "status": "off"
+
+    },
+    {
+      "id": 3,
+      "icon" : "lamp-charge.svg",
+      "name": "Speakers",
+      "room": 1,
+      "status": "off"
+    }
+  ]
+}

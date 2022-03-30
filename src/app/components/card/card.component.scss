@@ -1,0 +1,88 @@
+.card {
+  width: 200px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+
+  &.on {
+    background-color: #4a49cd;
+    .icon {
+        background-color: #ffffff38;
+    }
+    .info {
+        color: #ffffff;
+        p {
+            color: #9f9eff;
+        }
+    }
+
+    span {
+        color: #ffffff;
+    }
+
+    .toggle {
+        label {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        .circle {
+            background-color: #ffffff;
+        }
+    }
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+    background: grey;
+    border-radius: 50%;
+    padding: 10px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  p {
+    margin-top: 0;
+    font-size: 14px;
+    color: #bababa;
+  }
+}
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-top: 30px;
+}
+label {
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #d4d4d4;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+
+  .circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: #808080;
+    margin: 0 5px;
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+}
+
+.active {
+  transform: translateX(100%);
+}

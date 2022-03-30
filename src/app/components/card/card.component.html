@@ -1,0 +1,16 @@
+<div class="card" #card>
+  <div class="icon">
+    <img src="assets/img/{{device.icon}}" alt="" srcset="" />
+  </div>
+  <div class="info">
+    <h4>{{device.name}}</h4>
+    <p>{{device.room}}</p>
+  </div>
+  <div class="toggle">
+    <input hidden type="checkbox" name="switch" id="switch" />
+    <span>{{device.status}}</span>
+    <label for="switch" (click)="toggleSwitch()">
+      <div class="circle" #circle></div>
+    </label>
+  </div>
+</div>
