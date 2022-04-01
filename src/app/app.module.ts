@@ -15,6 +15,9 @@ import {MatInputModule } from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CardComponent } from './components/card/card.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { CardComponent } from './components/card/card.component';
     LoginComponent,
     ButtonComponent,
     DashboardComponent,
-    CardComponent
+    CardComponent,
+    DialogComponent
   ],
   imports: [
     HttpClientModule,
@@ -32,7 +36,9 @@ import { CardComponent } from './components/card/card.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatRippleModule
+    MatRippleModule,
+    MatDialogModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

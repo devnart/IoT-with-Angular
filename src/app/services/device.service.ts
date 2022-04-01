@@ -13,4 +13,8 @@ export class DeviceService {
   getDevices() : Observable<Device[]>{
     return this.http.get<Device[]>('http://localhost:3000/devices');
   }
+
+  setDevice(device:Device) :  Observable<Device>{
+    return this.http.post<Device>('http://localhost:3000/devices',device)
+  }
 }

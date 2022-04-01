@@ -8,8 +8,9 @@ import { Device } from 'src/app/interfaces/device';
 })
 export class CardComponent implements OnInit {
   @ViewChild('circle') circle!: ElementRef; 
-  @ViewChild('card') card!: ElementRef; 
+  @ViewChild('card') card!: ElementRef;
   @Input() device: Device = {} as Device
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +23,4 @@ export class CardComponent implements OnInit {
     this.circle.nativeElement.classList.toggle('active')
     this.card.nativeElement.classList.toggle('on')
   }
-
-
 }

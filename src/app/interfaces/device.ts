@@ -3,5 +3,6 @@ export interface Device {
     icon: string;
     name: string;
     room: number;
+    floor: number;
     status: boolean;
 }

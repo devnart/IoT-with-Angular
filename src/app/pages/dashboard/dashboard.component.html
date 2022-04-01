@@ -1,3 +1,17 @@
-<p>dashboard works!</p>
-<div >Hello</div>
-<app-card *ngFor="let device of devices" [device]="device"></app-card>
+<div class="container">
+    <div class="inner-container">
+        <header>
+            <div class="content">
+
+                <p>Welcome, Hamza</p>
+                <h3>Smart House Technology</h3>
+            </div>
+            <div class="add-device">
+                <app-button text="Add Device" (click)="openDialog()"></app-button>
+            </div>
+        </header>
+        <div class="cards">
+            <app-card *ngFor="let device of devices" [device]="device"></app-card>
+        </div>
+    </div>
+</div>
