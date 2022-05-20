@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   myForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private authService:AuthService) {}
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
@@ -19,11 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   getEmailErrorMessage() {
-    return this.myForm.get('email')?.hasError('required')
-      ? 'You must enter a value'
-      : this.myForm.get('email')?.hasError('email')
-      ? 'Not a valid email'
-      : '';
+    return this.myForm.get('email')?.hasError('required') ? 'You must enter a value' : '';
   }
 
   getPasswordErrorMessage() {
@@ -38,7 +35,15 @@ export class LoginComponent implements OnInit {
     console.log('Email', form.value.email);
     console.log('Password', form.value.password);
     if (this.myForm.valid) {
-      this.router.navigate(['/dashboard']);
+      this.authService.login(form.value.email, form.value.password).subscribe(
+        (data) => {
+          console.log(data);
+          this.router.navigate(['/dashboard']);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     } else {
       return;
     }
